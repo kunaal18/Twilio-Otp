@@ -31,7 +31,6 @@ public class OtpService {
 
 	public String generateOTP(String key) {
 		String otp = new DecimalFormat("000000").format(new Random().nextInt(999999));
-		System.err.println(otp + "----");
 		otpCache.put(key, otp);
 		return otp;
 	}
