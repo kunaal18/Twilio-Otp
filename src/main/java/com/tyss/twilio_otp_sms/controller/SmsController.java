@@ -21,11 +21,11 @@ public class SmsController {
 
 		String sendOTP = twilioService.sendOTP(dto);
 		if ("sent".equalsIgnoreCase(sendOTP) || "queued".equalsIgnoreCase(sendOTP)) {
+			System.err.println();
 			return new ResponseEntity<>("sent successfully", HttpStatus.OK);
 		}
 		return new ResponseEntity<>("failed to send", HttpStatus.BAD_REQUEST);
 
 	}
-	
-	
+
 }
